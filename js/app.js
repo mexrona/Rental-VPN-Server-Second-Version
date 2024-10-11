@@ -21,8 +21,8 @@
 const enLangButton = document.querySelector("#enLangButton");
 const ruLangButton = document.querySelector("#ruLangButton");
 
-const enLangTexts = document.querySelectorAll("#enLangText");
-const ruLangTexts = document.querySelectorAll("#ruLangText");
+const enLangTexts = document.querySelectorAll(".enLangText");
+const ruLangTexts = document.querySelectorAll(".ruLangText");
 
 const name = document.querySelector("#name");
 const emailUp = document.querySelector("#emailUp");
@@ -137,17 +137,22 @@ new Swiper(".swiper", {
 });
 
 /* 5. Testimonials Hidden Text */
-const mainInner = document.querySelector("#mainInner");
-const textArray = document.querySelectorAll("#textArray");
-const innerArray = document.querySelectorAll("#innerArray");
-const openArray = document.querySelectorAll("#openArray");
-const closeArray = document.querySelectorAll("#closeArray");
+const mainInner = document.querySelector(".mainInner");
+const textArray = document.querySelectorAll(".textArray");
+const innerArray = document.querySelectorAll(".innerArray");
+const openArray = document.querySelectorAll(".openArray");
+const closeArray = document.querySelectorAll(".closeArray");
 const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
 const block = document.querySelector("#block");
-const item = document.querySelector("#item");
+const items = document.querySelectorAll(".item");
+let item;
 const fraction = document.querySelector("#fraction");
 const innerHeight = [];
+
+for (let i = 0; i < items.length; i++) {
+    item = items[i];
+}
 
 innerArray.forEach((element) => {
     let height = element.clientHeight;
@@ -169,7 +174,6 @@ for (let i = 0; i < innerHeight.length; i++) {
 }
 
 for (let i = 0; i < openArray.length; i++) {
-    const height = innerHeight[i];
     const text = textArray[i];
     const open = openArray[i];
     const close = closeArray[i];
